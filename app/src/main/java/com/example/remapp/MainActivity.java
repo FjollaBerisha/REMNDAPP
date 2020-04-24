@@ -25,15 +25,26 @@ private Button LogIn;
         Name=(EditText)findViewById(R.id.etName);
         Password=(EditText)findViewById(R.id.edtPassword);
         LogIn=(Button)findViewById(R.id.btnlogin);
+
+        LogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate(Name.getText().toString(),Password.getText().toString());
+                 
+            }
+        });
     }
         private  void validate(String username,String password)
         {
-            if( (username=="fjolla")&&(password=="1234"))
+            if((username.equals("fjolla"))&&(password.equals("1234")))
             {
                 Intent Inten=new Intent(MainActivity.this,SecondActivity.class);
+                startActivity(Inten);
+             }
+
+
         }
-        }
+
+    }
 
 
-
-}
