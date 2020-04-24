@@ -13,7 +13,13 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
+         Button button=(Button)findViewById(R.id.btnListat);
+         button.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 OpenFourthActivity();
+             }
+         });
         Button btn=(Button)findViewById(R.id.btnTodo);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +34,11 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ThirdActivity.class);
 
         startActivity(intent);
+    }
+    public  void OpenFourthActivity()
+    {
+        Intent intent=new Intent(this,FourthActivity.class)
+                startActivity(intent);
     }
 
 }
